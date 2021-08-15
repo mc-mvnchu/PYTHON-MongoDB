@@ -3,7 +3,7 @@ Python can be used in database applications
 One of the most popular NoSQL database is MongoDB.
 
 ### MongoDB
-    *MongoDB stores data in JSON-like documents, which makes the database very flexible and scalable
+    MongoDB stores data in JSON-like documents, which makes the database very flexible and scalable
 
 #### Prerequisites
 * You can download a free MongoDB database at "https://www.mongodb.com"
@@ -69,12 +69,12 @@ Example:- `mongo_insert_ids.py`
 * In MongoDB, we use the `find` and `findOne` methods to find data in a collection
 * Just like the `SELECT` statement is used to find data in a table in a MySQL database.
 
-#### Find One
+#### `Find One`
 To select data from a collection in MongoDB, we can use the `find_one()` method.
 The `find_one()` method returns the first occurrence in the selection.
 Example:- `mongo_find_one.py`
 
-#### Find All
+#### `Find All`
 To select data from a table in MongoDB, we can also use the `find()` method, which returns all occurrences in the selection.
 The first parameter of the `find()` method is a query object. 
 In the Example, we use an empty query object, which selects all documents in the collection.
