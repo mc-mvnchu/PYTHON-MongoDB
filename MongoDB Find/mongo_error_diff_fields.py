@@ -1,0 +1,10 @@
+import pymongo
+
+myclient = pymongo.MongoClient('mongodb://localhost:27017')
+mydb = myclient["mydatabase"]
+mycol = mydb["customers"]
+
+#Error is printed, due to different value from different fields
+for x in mycol.find({},{ "name": 1, "address": 0 }):
+    print(x)
+
