@@ -2,15 +2,15 @@
 Python can be used in database applications
 One of the most popular NoSQL database is MongoDB.
 
-### MONGODB
-MongoDB stores data in JSON-like documents, which makes the database very flexible and scalable
+### MongoDB
+    *MongoDB stores data in JSON-like documents, which makes the database very flexible and scalable
 
-##### Prerequisites
+#### Prerequisites
 * You can download a free MongoDB database at "https://www.mongodb.com"
 * Or get started right away with a MongoDB cloud service at ""https://www.mongodb.com/cloud/atlas"
 From the CLi you can insert the following `pip install pymongo`
 
-#### Test PyMongo
+### Test PyMongo
 To test if the installation was successful, or if you already have "pymongo" installed, create a Python page with the following content: From the example:-  `demo_mongodb_test.py` is executed with no errors, "pymongo" is installed and ready to be used.
 
 # PYTHON MongoDB Create Database (Folder)
@@ -20,7 +20,7 @@ MongoDB will create the database if it doesn't exist, and make a connection to i
     *Note: In MongoDB, a database is not created until it gets content*
 MongoDB waits until you have created a collection (table), with at least one document (record) before it actually, creates the database (and collection)
 
-##### Check if Database Exists
+#### Check if Database Exists
 * Remainder: In MongoDB, a database is not created until it gets content, so if it's you first-time creating a DB, you should complete the next two chapters, i.e (create collection and create document) before you check if the DB exists.
 
 
@@ -32,7 +32,7 @@ To create a collection in MongoDB, use the database object and specify the name 
 MongoDB will create the collection if it doesn't exist.
 Example:- `create_customers_collection.py`
 
-    *Important: In MongoDB, a collection is not created until it gets content!*
+*   *Important: In MongoDB, a collection is not created until it gets content!*
 MongoDB waits until you have inserted a document before it actually creates the collection.
 
 #### Check if Collection Exists
