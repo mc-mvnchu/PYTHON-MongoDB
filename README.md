@@ -16,8 +16,8 @@ To test if the installation was successful, or if you already have "pymongo" ins
 ### Creating a Database
 To create a database in MongoDB, start by creating a MongoClient object, then specify a connection URL with the corrected ip address and the name of the database you want to create.
 MongoDB will create the database if it doesn't exist, and make a connection to it.
-    *Note: In MongoDB, a database is not created until it gets content*
-MongoDB waits until you have created a collection (table), with at least one document (record) before it actually, creates the database (and collection)
+  * Note: In MongoDB, a database is not created until it gets content
+- MongoDB waits until you have created a collection (table), with at least one document (record) before it actually, creates the database (and collection)
 
 ### Check if Database Exists
 * Remainder: In MongoDB, a database is not created until it gets content, so if it's you first-time creating a DB, you should complete the next two chapters, i.e (create collection and create document) before you check if the DB exists.
@@ -75,15 +75,15 @@ The `find_one()` method returns the first occurrence in the selection.
 Example:- `mongo_find_one.py`
 
 ## `Find All`
-To select data from a table in MongoDB, we can also use the `find()` method, which returns all occurrences in the selection.
+- To select data from a table in MongoDB, we can also use the `find()` method, which returns all occurrences in the selection.
 The first parameter of the `find()` method is a query object. 
-In the Example, we use an empty query object, which selects all documents in the collection.
+- In the Example, we use an empty query object, which selects all documents in the collection.
 *No parameters in the `find()` method gives you the same result as `SELECT *` in MySQL.* 
 Example:- `mongo_find_all.py`
 
 ### Return Only Some Fields
-The second parameter of the `find()` method is an object describing which fields to include in the result.
-This parameter is optional, and if omitted, all fields will be included in the result.
+- The second parameter of the `find()` method is an object describing which fields to include in the result.
+- This parameter is optional, and if omitted, all fields will be included in the result.
 Example: `mongo_find_some_fields.py`
 
 Specifying both 1 and 0 values in the same object is NOT allowed (except if one the fields is the _id field.) 
@@ -94,12 +94,12 @@ If you specify a field with the value 0, all other fields get the value 1, and v
 
 # PYTHON MongoDB Query (Folder)
 ### Filter The Result
-When finding docs in a collection, you can filter the result by using a query object.
-The first argument of the `find()` method is a query object, and is used to limit the search
+- When finding docs in a collection, you can filter the result by using a query object.
+- The first argument of the `find()` method is a query object, and is used to limit the search
 Example:- `mongo_filter_query_find.py`
 
 ### Advanced Query
-To make advanced queries you can use modifiers as values in the query object.
+- To make advanced queries you can use modifiers as values in the query object.
 E.g. to find the documents where the "address" field starts with the letter "S" or higher (alphabetical), use the greater than modifier: `{"$gt": "S"}`
 Example:- `mongo_advanced_filter.py`
 
@@ -107,8 +107,26 @@ Example:- `mongo_advanced_filter.py`
 You can also use regular expressions as a modifier.
 * Regular Expressions can be used to query strings.
 
-To find only the documents where the "address" field starts with letter "S", use the regular expression `{"$regex": "^S"}`:
+- To find only the documents where the "address" field starts with letter "S", use the regular expression `{"$regex": "^S"}`:
 Example:- `mongo_filter_with_regExp.py`
 
+# PYTHON MongoDB Sort (folder)
+#### Sort the Result (Ascending)
+* Use the `sort()` method to sort the result in ascending or descending order. 
+* The method takes one parameter for "fieldname" and one parameter for "direction" (ascending is the default direction).
+Example:- `mongo_sort_result_ascending-default.py`
 
-    ...Documentation will continue...
+#### Sort Descending
+Use the value -1 as the second parameter to sort descending.
+
+*   `sort(*name*, 1)` #ascending
+*   `sort(*name*, -1)` #descending
+Example:- `mongo_sort_result_descending.py`
+
+# PYTHON MongoDB Delete Document
+### Delete Document
+- To delete one document, we use the `delete_one` method.
+- The first parameter of the `delete_one()` method is a query object defining which document to delete.
+
+* NOTE: If the query finds more than one document, only the first occurrence is deleted.
+Example: `mongo_delete_document.py`
