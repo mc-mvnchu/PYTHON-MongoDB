@@ -5,16 +5,17 @@ One of the most popular NoSQL database is MongoDB.
 ## MongoDB
     MongoDB stores data in JSON-like documents, which makes the database very flexible and scalable
 #### Prerequisites
-* You can download a free MongoDB database at [Link](https://www.mongodb.com/ "MongoDB Website")
-* Or get started right away with a MongoDB cloud service at [Link](https://www.mongodb.com/cloud/atlas "MongoDB Atlas")
+* You can download a free MongoDB database at [MongoDB Website](https://www.mongodb.com/ "MongoDB Website")
+* Or get started right away with a MongoDB cloud service at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas "MongoDB Atlas")
 From the CLi you can insert the following `pip install pymongo`
 
 ### Test PyMongo
-To test if the installation was successful, or if you already have "pymongo" installed, create a Python page with the following content: From the example:-  `demo_mongodb_test.py` is executed with no errors, "pymongo" is installed and ready to be used.
+- To test if the installation was successful, or if you already have "pymongo" installed, create a Python page with the following content: 
+- From the example:-  `demo_mongodb_test.py` is executed with no errors, "pymongo" is installed and ready to be used.
 
 # PYTHON MongoDB Create Database (Folder)
 ### Creating a Database
-To create a database in MongoDB, start by creating a MongoClient object, then specify a connection URL with the corrected ip address and the name of the database you want to create.
+- To create a database in MongoDB, start by creating a MongoClient object, then specify a connection URL with the corrected ip address and the name of the database you want to create.
 MongoDB will create the database if it doesn't exist, and make a connection to it.
   * Note: In MongoDB, a database is not created until it gets content
 - MongoDB waits until you have created a collection (table), with at least one document (record) before it actually, creates the database (and collection)
@@ -27,51 +28,51 @@ MongoDB will create the database if it doesn't exist, and make a connection to i
 * A `collection` in MongoDB is the same as a table in `SQL` databases
 
 ## Create A Collection
-To create a collection in MongoDB, use the database object and specify the name of the collection you will create.
-MongoDB will create the collection if it doesn't exist.
+- To create a collection in MongoDB, use the database object and specify the name of the collection you will create.
+- MongoDB will create the collection if it doesn't exist.
 Example:- `create_customers_collection.py`
 
 *   *Important: In MongoDB, a collection is not created until it gets content!*
 
-MongoDB waits until you have inserted a document before it actually creates the collection.
+- MongoDB waits until you have inserted a document before it actually creates the collection.
 
 ## Check if Collection Exists
 * Remember: In MongoDB, a collection is not created until it gets content, so if this is your first time creating a collection, you should complete the next chapter (create document) before you check if the collection exists!
-To check if a collection exists in a database by listing all collections: Example=> `print(mydb.list_collection_names())`
+- To check if a collection exists in a database by listing all collections: Example=> `print(mydb.list_collection_names())`
 
 
 # PYTHON MongoDB Insert Document (Folder)
 * A `document` in MongoDB is the same as a `record` in SQL databases.
 
 ## Insert Into Collection
-To insert a record, or document as it is called in MongoDB, into a collection, we use the `insert_one()` method.
-The first parameter of the `insert_one()` method is a dictionary containing the name(s), and value(s) of each field in the document you want to insert.
+- To insert a record, or document as it is called in MongoDB, into a collection, we use the `insert_one()` method.
+- The first parameter of the `insert_one()` method is a dictionary containing the name(s), and value(s) of each field in the document you want to insert.
 Example:- `insert_method_collection.py`
 
 ## Return the `_id` Field
-The `insert_one()` method returns a InsertOneResult object, which has a property, `insert_id`, that holds the id of the inserted document.
+- The `insert_one()` method returns a InsertOneResult object, which has a property, `insert_id`, that holds the id of the inserted document.
 Example:- `mongo_insert_id.py`
-In the example above, no `_id` field was specified, so MongoDB assigned a unique_id for the record (document)
+- In the example above, no `_id` field was specified, so MongoDB assigned a unique_id for the record (document)
 * If you don't specify an `_id` field, then MongoDB will add one for you and assign an unique id for each document
 
 ## Insert Multiple Documents
-To insert multiple docs into a collection in MongoDB, we use the `insert_many()` method.
-The first parameter of the `insert_many()` method is a list containing dictionaries with the data you want to insert:
+- To insert multiple docs into a collection in MongoDB, we use the `insert_many()` method.
+- The first parameter of the `insert_many()` method is a list containing dictionaries with the data you want to insert:
 Example: `mongo_insert_many.py`
 
 ## Insert Multiple Documents, with specified IDs
-If you do not want MongoDB to assign unique IDs for your doc, you can specify the _id field when you insert the document(s).
-Remember that the values has to be unique. Two documents cannot have the same _id.
+- If you do not want MongoDB to assign unique IDs for your doc, you can specify the _id field when you insert the document(s).
+- Remember that the values has to be unique. Two documents cannot have the same _id.
 Example:- `mongo_insert_ids.py`
 
 
 # PYTHON MongoDB Find (Folder)
-* In MongoDB, we use the `find` and `findOne` methods to find data in a collection
-* Just like the `SELECT` statement is used to find data in a table in a MySQL database.
+- In MongoDB, we use the `find` and `findOne` methods to find data in a collection
+- Just like the `SELECT` statement is used to find data in a table in a MySQL database.
 
 ## `Find One`
-To select data from a collection in MongoDB, we can use the `find_one()` method.
-The `find_one()` method returns the first occurrence in the selection.
+- To select data from a collection in MongoDB, we can use the `find_one()` method.
+- The `find_one()` method returns the first occurrence in the selection.
 Example:- `mongo_find_one.py`
 
 ## `Find All`
@@ -86,7 +87,7 @@ Example:- `mongo_find_all.py`
 - This parameter is optional, and if omitted, all fields will be included in the result.
 Example: `mongo_find_some_fields.py`
 
-Specifying both 1 and 0 values in the same object is NOT allowed (except if one the fields is the _id field.) 
+- Specifying both 1 and 0 values in the same object is NOT allowed (except if one the fields is the _id field.) 
 If you specify a field with the value 0, all other fields get the value 1, and vice-versa:
 * Example:- `mongo_exclude_address.py` --> This will exclude "address" from the result
 * Example:- `mongo_error_diff_fields.py` --> This will give an error if two different values are specified.
@@ -104,7 +105,7 @@ E.g. to find the documents where the "address" field starts with the letter "S" 
 Example:- `mongo_advanced_filter.py`
 
 ### Filter With Regular Expressions
-You can also use regular expressions as a modifier.
+- You can also use regular expressions as a modifier.
 * Regular Expressions can be used to query strings.
 
 - To find only the documents where the "address" field starts with letter "S", use the regular expression `{"$regex": "^S"}`:
@@ -112,8 +113,8 @@ Example:- `mongo_filter_with_regExp.py`
 
 # PYTHON MongoDB Sort (folder)
 #### Sort the Result (Ascending)
-* Use the `sort()` method to sort the result in ascending or descending order. 
-* The method takes one parameter for "fieldname" and one parameter for "direction" (ascending is the default direction).
+- Use the `sort()` method to sort the result in ascending or descending order. 
+- The method takes one parameter for "fieldname" and one parameter for "direction" (ascending is the default direction).
 Example:- `mongo_sort_result_ascending-default.py`
 
 #### Sort Descending
