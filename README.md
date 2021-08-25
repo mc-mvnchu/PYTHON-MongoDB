@@ -5,8 +5,8 @@ One of the most popular NoSQL database is MongoDB.
 ## MongoDB
     MongoDB stores data in JSON-like documents, which makes the database very flexible and scalable
 #### Prerequisites
-* You can download a free MongoDB database at "https://www.mongodb.com"
-* Or get started right away with a MongoDB cloud service at ""https://www.mongodb.com/cloud/atlas"
+* You can download a free MongoDB database at [Link](https://www.mongodb.com/ "MongoDB Website")
+* Or get started right away with a MongoDB cloud service at [Link](https://www.mongodb.com/cloud/atlas "MongoDB Atlas")
 From the CLi you can insert the following `pip install pymongo`
 
 ### Test PyMongo
