@@ -1,6 +1,11 @@
 {
     "cSpell.words": [
         "mydb",
-        "pymongo"
+        "pymongo",
+        "myclient",
+        "mongodb",
+        "mydatabase",
+        "mydict",
+        "myquery"
     ]
 }

@@ -6,8 +6,8 @@ One of the most popular NoSQL database is MongoDB.
     MongoDB stores data in JSON-like documents, which makes the database very flexible and scalable
 #### Prerequisites
 * You can download a free MongoDB database at [MongoDB Website](https://www.mongodb.com/ "MongoDB Website")
-* Or get started right away with a MongoDB cloud service at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas "MongoDB Atlas")
-From the CLi you can insert the following `pip install pymongo`
+* Or get started right away with a MongoDB cloud service at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/ "MongoDB Atlas") 
+\\- From the CLi you can insert the following `pip install pymongo`
 
 ### Test PyMongo
 - To test if the installation was successful, or if you already have "pymongo" installed, create a Python page with the following content: 
@@ -124,10 +124,24 @@ Use the value -1 as the second parameter to sort descending.
 *   `sort(*name*, -1)` #descending
 Example:- `mongo_sort_result_descending.py`
 
-# PYTHON MongoDB Delete Document
+# PYTHON MongoDB Delete Document (Folder)
 ### Delete Document
 - To delete one document, we use the `delete_one` method.
 - The first parameter of the `delete_one()` method is a query object defining which document to delete.
 
 * NOTE: If the query finds more than one document, only the first occurrence is deleted.
 Example: `mongo_delete_document.py`
+
+#### Delete Many Documents
+To delete more than one document, `delete_many()` method is used.
+- The first parameter of the `delete_many()` method is a query object defining which documents to delete.
+Example:- `mongo_delete_many().py` *Delete all documents were the address starts with the letter S*
+
+#### Delete All Documents in a Collection
+- To delete all documents in a collection, pass an empty query object to the `delete_many()` method.
+Example:- `mongo_delete_all_docs.py` *Delete all document in the "customers" collection*
+
+# PYHTON MongoDB Drop Collection (Folder)
+#### Delete Collection
+You can delete a table, or collection as it is called in MongoDB, by using the `drop()` method.
+Example:- `mongo_drop_collection.py`
