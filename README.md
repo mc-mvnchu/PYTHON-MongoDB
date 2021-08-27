@@ -141,7 +141,47 @@ Example:- `mongo_delete_many().py` *Delete all documents were the address starts
 - To delete all documents in a collection, pass an empty query object to the `delete_many()` method.
 Example:- `mongo_delete_all_docs.py` *Delete all document in the "customers" collection*
 
+
 # PYHTON MongoDB Drop Collection (Folder)
 #### Delete Collection
 You can delete a table, or collection as it is called in MongoDB, by using the `drop()` method.
 Example:- `mongo_drop_collection.py`
+
+
+# PYTHON MongoDB Update (Folder)
+### Update Collection
+You can update a record, or document as it is called in MonogDB, by using the `update_one()` method.
+- The first parameter of the `update_one()` method is a query object defining which document to update.
+*Note: If the query find more than one record, only the first occurrence is updated.*
+- The second parameter is an object defining the new values of the document.
+Example:- `mongo_update_one().py` *Change the address from "Valley 345" to "Canyon 123"*
+
+### Update Many
+- To update all documents that meets the criteria of the query, use the `update_many()` method.
+Example:- `mongo_update_many.py` *Update all document where the address starts with the letter "S"*
+
+
+# PYTHON MongoDB Limit (Folder)
+#### Limit the result
+To limit the result in MongoDB, we use the `limit()` method.
+The `limit()` method takes one parameter, a number defining how many documents to return
+Consider you have a "customers" collection:
+
+	### Customers
+	`
+	{'_id': 1, 'name': 'John', 'address': 'Highway37'}
+	{'_id': 2, 'name': 'Peter', 'address': 'Lowstreet 27'}
+	{'_id': 3, 'name': 'Amy', 'address': 'Apple st 652'}
+	{'_id': 4, 'name': 'Hannah', 'address': 'Mountain 21'}
+	{'_id': 5, 'name': 'Michael', 'address': 'Valley 345'}
+	{'_id': 6, 'name': 'Sandy', 'address': 'Ocean blvd 2'}
+	{'_id': 7, 'name': 'Betty', 'address': 'Green Grass 1'}
+	{'_id': 8, 'name': 'Richard', 'address': 'Sky st 331'}
+	{'_id': 9, 'name': 'Susan', 'address': 'One way 98'}
+	{'_id': 10, 'name': 'Vicky', 'address': 'Yellow Garden 2'}
+	{'_id': 11, 'name': 'Ben', 'address': 'Park Lane 38'}
+	{'_id': 12, 'name': 'William', 'address': 'Central st 954'}
+	{'_id': 13, 'name': 'Chuck', 'address': 'Main Road 989'}
+	{'_id': 14, 'name': 'Viola', 'address': 'Sideway 1633'}
+	`
+Example:- `mongo_limit.py` *Limit the result to only return 5 documents*
